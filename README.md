@@ -13,6 +13,7 @@
 |SnapshotId|String|(*required*)|`/crm`にマウントするボリュームの[スナップショット](https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Snapshots:sort=desc:startTime)|
 |DockerComposeVersion|String|1.26.2|利用するdocker-composeのバージョン|
 |CertificateArn|String|(*required*)|ロードバランサのリスナ(HTTPS)に設定する証明書(ACM)のArn|
+|AllowCidrIp|String|0.0.0.0/0|接続を許可するIPアドレスCIDR|
 
 ```sh
 # e.g.

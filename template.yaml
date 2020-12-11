@@ -14,6 +14,9 @@ Parameters:
     Default: 1.26.2
   CertificateArn:
     Type: String
+  AllowCidrIp:
+    Type: String
+    Default: 0.0.0.0/0
 
 Resources:
   # ----------------------------------------------------------------------------
@@ -226,11 +229,11 @@ Resources:
       VpcId: !Ref Vpc
       GroupDescription: crm-lb
       SecurityGroupIngress:
-      - CidrIp: 0.0.0.0/0
+      - CidrIp: !Ref AllowCidrIp
         FromPort: 80
         ToPort: 80
         IpProtocol: tcp
-      - CidrIp: 0.0.0.0/0
+      - CidrIp: !Ref AllowCidrIp
         FromPort: 443
         ToPort: 443
         IpProtocol: tcp
